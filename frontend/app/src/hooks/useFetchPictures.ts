@@ -21,17 +21,11 @@ const initialState = {
 };
 
 export const useFetchPictures = (tag: Hook["input"]): Hook["output"] => {
-  const [pictures, setPictures] = useState<HookState["pictures"]>(
-    initialState.pictures
-  );
-  const [isLoading, setIsLoading] = useState<HookState["isLoading"]>(
-    initialState.isLoading
-  );
+  const [state, setState] = useState<HookState>(initialState);
 
   const setNewPictures = async () => {
     const newPictures = await DefaultService.searchByTagPicturesGet(tag);
-    setPictures(newPictures);
-    setIsLoading(false);
+    setState({ pictures: newPictures, isLoading: false });
   };
 
   useEffect(() => {
@@ -39,7 +33,7 @@ export const useFetchPictures = (tag: Hook["input"]): Hook["output"] => {
   }, []);
 
   return {
-    pictures,
-    isLoading,
+    pictures: state.pictures,
+    isLoading: state.isLoading,
   };
 };
