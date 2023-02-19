@@ -1,11 +1,9 @@
-from fastapi import FastAPI
-from fastapi.middleware.cors import CORSMiddleware
-
+from app.config import remote_origins
+from app.db import client
 from app.endpoints import router
 from app.utils import create_pictures_dir, mount_sub_app
-from app.db import client
-from app.config import remote_origins
-
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 

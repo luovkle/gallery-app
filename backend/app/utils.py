@@ -1,10 +1,9 @@
-import uuid
 import shutil
+import uuid
 
+from app.config import pictures_dir, pictures_path
 from fastapi import UploadFile
 from fastapi.staticfiles import StaticFiles
-
-from app.config import pictures_path, pictures_dir
 
 
 def mount_sub_app(app):

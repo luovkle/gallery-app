@@ -1,8 +1,7 @@
-from fastapi import APIRouter, UploadFile, File, Form, Query
-
+from app.db import client
 from app.schemas import PictureCreate, PictureRead, picture_entity, pictures_entity
 from app.utils import save_picture
-from app.db import client
+from fastapi import APIRouter, File, Form, Query, UploadFile
 
 db = client.pictures
 
