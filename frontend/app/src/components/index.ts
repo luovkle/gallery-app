@@ -1,3 +1,3 @@
-export * from "./AddTag"
-export * from "./PictureGrid"
-export * from "./PictureItem"
+export * from "./AddTag";
+export * from "./PictureGrid";
+export * from "./PictureItem";

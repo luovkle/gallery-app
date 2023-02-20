@@ -3,7 +3,6 @@
 /* eslint-disable */
 
 export type Body_send_picture_pictures_post = {
-    picture: Blob;
-    tags: Array<string>;
+  picture: Blob;
+  tags: Array<string>;
 };
-
